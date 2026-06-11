@@ -202,6 +202,8 @@ const server=app.listen(PORT, () => {
 // const server = http.createServer(app); // Create an HTTP server using the Express app
 const io = socketIo(server, { // Attach Socket.IO to the server
     maxHttpBufferSize: 1e6,
+    pingTimeout: 60000,
+    pingInterval: 25000,
 	cors: {
 		origin: "*",
         credentials: true,

@@ -30,7 +30,12 @@ export default function TextEditor() {
   const userId = user._id;
 
   useEffect(() => {
-    const s = io(process.env.REACT_APP_URL);
+    const s = io(process.env.REACT_APP_URL, {
+        transports: ["websocket"],
+        reconnection: true,
+        reconnectionAttempts: 5,
+        reconnectionDelay: 1000,
+    });
     setSocket(s);
 
     return () => {
