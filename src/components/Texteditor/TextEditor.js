@@ -122,6 +122,8 @@ export default function TextEditor() {
   };
 
   const handleJoinDocument = () => {
+    console.log("Join clicked, joinDocId:", joinDocId);
+    console.log("Is valid UUID:", validateUuid(joinDocId));
     if (!joinDocId.trim()) return;
   
     // Validate if the ID is a valid UUIDv4
