@@ -31,10 +31,11 @@ export default function TextEditor() {
 
   useEffect(() => {
     const s = io(process.env.REACT_APP_URL, {
-        transports: ["websocket"],
+        transports: ["polling", "websocket"],
         reconnection: true,
-        reconnectionAttempts: 5,
-        reconnectionDelay: 1000,
+        reconnectionAttempts: 10,
+        reconnectionDelay: 2000,
+        timeout: 20000,
     });
     setSocket(s);
 
