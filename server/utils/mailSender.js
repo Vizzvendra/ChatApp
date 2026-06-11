@@ -46,7 +46,7 @@ const mailSender = async (email, title, body) => {
         });
 
         const info = await client.transactionalEmails.sendTransacEmail({
-            sender: { name: 'LoginNest | Vishvendra Rathore', email: 'ae0e96001@smtp-brevo.com' },
+            sender: { name: 'LoginNest | Vishvendra Rathore', email: 'vishvendrasr11@gmail.com' },
             to: [{ email: email }],
             subject: title,
             htmlContent: body,
