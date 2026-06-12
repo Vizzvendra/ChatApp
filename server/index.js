@@ -201,7 +201,7 @@ const server=app.listen(PORT, () => {
 
 // const server = http.createServer(app); // Create an HTTP server using the Express app
 const io = socketIo(server, {
-    maxHttpBufferSize: 1e6,
+    maxHttpBufferSize: 1e8,
     pingTimeout: 60000,
     pingInterval: 25000,
     transports: ["polling", "websocket"],
