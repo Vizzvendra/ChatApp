@@ -264,7 +264,7 @@ io.on("connection", (socket) => {
             socket.to(documentId).emit("receive-changes", delta);
             try {
                 // Update the changeLog in the database for the specific document
-                await Document.findOneAndUpdate(documentId, {
+                await Document.findOneAndUpdate({ _id: documentId }, {
                 $push: {
                     changeLog: {
                     user: userId,
@@ -286,7 +286,7 @@ io.on("connection", (socket) => {
             }
           
             try {
-              await Document.findOneAndUpdate(documentId, {
+              await Document.findOneAndUpdate({ _id: documentId }, {
                 data,
                 lastModifiedBy: userId,
               });
